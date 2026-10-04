@@ -1,0 +1,100 @@
+{
+  "network": "Sepolia",
+  "chainId": 11155111,
+  "forkBlock": null,
+  "user": "0xe37cc36B602af22D7dC61B5fC326DFe62dD94B1D",
+  "router": "0xeE567Fe1712Faf6149d80dA1E6934E354124CfE3",
+  "factory": "0xF62c03E08ada871A0bEb309762E260a7a6a880E6",
+  "stages": [
+    {
+      "number": 1,
+      "title": "Підключення до Sepolia та Uniswap V2",
+      "data": {
+        "RPC": "Sepolia RPC (URL приховано)",
+        "chainId": 11155111,
+        "Гаманець": "0xe37cc36B602af22D7dC61B5fC326DFe62dD94B1D",
+        "Баланс Sepolia ETH": "0.05",
+        "Router": "0xeE567Fe1712Faf6149d80dA1E6934E354124CfE3",
+        "Factory": "0xF62c03E08ada871A0bEb309762E260a7a6a880E6",
+        "Код Router": "Перевірено",
+        "Компіляція": "0.8.34+commit.80d5c536.Emscripten.clang"
+      }
+    },
+    {
+      "number": 2,
+      "title": "Емісія токенів та розгортання інтегратора",
+      "data": {
+        "TokenA": "0x79206a2eBcB27661E13e8237f62817F74E50e2D6",
+        "TokenB": "0x408B062b799039714D5265238568F46233950569",
+        "DefiIntegrator": "0xD68Ccd669945aDa294E6a2dbf61fCE29819d7ABc",
+        "Емісія VTA": "100000.0",
+        "Емісія VTB": "100000.0",
+        "Router інтегратора": "0xeE567Fe1712Faf6149d80dA1E6934E354124CfE3",
+        "Транзакція VTA": "0xf79d361c4bfaefe39724d17348621cc1cbb2c103f7ba44d9f8b7c607ac8df3a4",
+        "Транзакція VTB": "0x600d84b5707d8447394323cafbde457dd41ec67dc2b3a07904c6bab982b5db00",
+        "Транзакція інтегратора": "0xb30d066d9bf6ee0a8de861d06f884a55d7bd2780ab64272e86f176f0160e4fc5"
+      }
+    },
+    {
+      "number": 3,
+      "title": "Дозволи approve для DefiIntegrator",
+      "data": {
+        "allowance VTA": "1010.0",
+        "allowance VTB": "2000.0",
+        "approve VTA tx": "0xc05cafedd12877fee365d99286ec69df8a0f78b29eb3c529de40d3c1b778107b",
+        "approve VTB tx": "0x0eedaa57e3318cec6b4b2ca467880afc96a4fef4cfe423db10c6f621a54df694",
+        "Отримувач дозволів": "0xD68Ccd669945aDa294E6a2dbf61fCE29819d7ABc"
+      }
+    },
+    {
+      "number": 4,
+      "title": "Створення пулу через provideLiquidity",
+      "data": {
+        "Pair": "0x7F75210b0ba5e213f9B407Ea4368C2C90735BDFD",
+        "Резерв VTA": "1000.0",
+        "Резерв VTB": "2000.0",
+        "LP токени користувача": "1414.213562373095047801",
+        "Баланс VTA користувача": "99000.0",
+        "Баланс VTB користувача": "98000.0",
+        "Транзакція": "0x2d871d8176e0cd36b5ed4118823e967bc070c68a2a4d0610475a945c9b8dba34",
+        "Блок": 11843921,
+        "Gas used": "2744998"
+      }
+    },
+    {
+      "number": 5,
+      "title": "Обмін 10 VTA на VTB через swapTokens",
+      "data": {
+        "Вхід VTA": "10",
+        "Очікувано VTB": "19.743160687941225977",
+        "amountOutMin VTB": "19.545729081061813717",
+        "Отримано VTB": "19.743160687941225977",
+        "Допустиме проковзування": "1%",
+        "Баланс VTA після": "98990.0",
+        "Баланс VTB після": "98019.743160687941225977",
+        "Резерв VTA після": "1010.0",
+        "Резерв VTB після": "1980.256839312058774023",
+        "Транзакція": "0x76cfb3c9b0d01416a664d58b273971435d3aadfa14c8b3f31be125b4afd49210",
+        "Блок": 11843924,
+        "Gas used": "165330"
+      }
+    },
+    {
+      "number": 6,
+      "title": "Перевірка результатів та захисту",
+      "data": {
+        "approve → provideLiquidity → swapTokens": "PASS",
+        "Зменшення VTA та збільшення VTB": "PASS",
+        "LP отримав користувач": "PASS",
+        "Токени не залишились в інтеграторі": "PASS",
+        "Дозволи інтегратора для Router очищені": "PASS",
+        "Завищений amountOutMin відхилено": "PASS",
+        "Прострочений deadline відхилено": "PASS"
+      }
+    }
+  ],
+  "tokenA": "0x79206a2eBcB27661E13e8237f62817F74E50e2D6",
+  "tokenB": "0x408B062b799039714D5265238568F46233950569",
+  "integrator": "0xD68Ccd669945aDa294E6a2dbf61fCE29819d7ABc",
+  "pair": "0x7F75210b0ba5e213f9B407Ea4368C2C90735BDFD"
+}
